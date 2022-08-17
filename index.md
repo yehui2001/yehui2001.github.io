@@ -13,5 +13,4 @@
 [*今天，京东方青岛王台基地全面封顶！*](https://www.sohu.com/a/559526105_121123678)  
 [*抢占“窗口期”：青岛西海岸新区为何紧握“一芯一屏”*](https://baijiahao.baidu.com/s?id=1733154657666127300&wfr=spider&for=pc)  
 [*快速“腾笼”，精心“换鸟”！西海岸王台老工业区加速打造芯屏产业新城*](https://www.sohu.com/a/569986144_121123678)  
-
 [*京东方等大项目落地 助力西海岸新区王台老工业区焕发新活力*](http://zsqd.app.qing5.com/mobile/content/330267?app=powerqd)
