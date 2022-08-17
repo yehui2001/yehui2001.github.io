@@ -3,6 +3,7 @@
 
 
  社会实践相关新闻材料：  
+ [***青岛西海岸新区王台街道乡村振兴工作队：把聚力乡村振兴的画卷镌刻在大地上***](http://news.bandao.cn/a/591692.html)
 [*青岛京东方项目全面封顶*](http://qdsq.qingdao.gov.cn/xwdt_86/jjqd_86/202206/t20220622_6185888.shtml)    
 [*全球最大！京东方工厂项目落户青岛！*](https://finance.sina.com.cn/tech/2021-09-03/doc-iktzscyx2015751.shtml)  
 [*重大进展！青岛京东方项目提前63天封顶，预计11月“点亮”*](https://www.dailyqd.com/guanhai/190805_1.html)  
