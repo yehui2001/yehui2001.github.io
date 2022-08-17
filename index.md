@@ -1,7 +1,8 @@
 # This is my first website
 ## 纪念这一历史的一刻 网站创立 2022/5/30
 
-
+社会实践网上优秀报告：
+[*“传城市文化之焰”发展成就观察团调研报告*](https://dxs.moe.gov.cn/zx/a/sqshsj_2022shsj-dcbg/220809/1784517.shtml)
  社会实践相关新闻材料：  
 [***青岛西海岸新区王台街道乡村振兴工作队：把聚力乡村振兴的画卷镌刻在大地上***](http://news.bandao.cn/a/591692.html)  
 [*青岛京东方项目全面封顶*](http://qdsq.qingdao.gov.cn/xwdt_86/jjqd_86/202206/t20220622_6185888.shtml)    
