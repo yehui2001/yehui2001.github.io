@@ -1,6 +1,8 @@
 # This is my first website
 ## 纪念这一历史的一刻 网站创立 2022/5/30
-  相关新闻材料：  
+
+
+ 社会实践相关新闻材料：  
 [*青岛京东方项目全面封顶*](http://qdsq.qingdao.gov.cn/xwdt_86/jjqd_86/202206/t20220622_6185888.shtml)    
 [*全球最大！京东方工厂项目落户青岛！*](https://finance.sina.com.cn/tech/2021-09-03/doc-iktzscyx2015751.shtml)  
 [*重大进展！青岛京东方项目提前63天封顶，预计11月“点亮”*](https://www.dailyqd.com/guanhai/190805_1.html)  
