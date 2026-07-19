@@ -1,0 +1,32 @@
+---
+layout: default
+title: 文章分类
+description: 按主题探索站内文章。
+---
+<section class="category-shell">
+  <header class="page-heading">
+    <div class="section-kicker">CATEGORIES</div>
+    <h1>按主题探索</h1>
+    <p>知识不是抽屉，但分类能让再次相遇变得容易。</p>
+  </header>
+  {% assign sorted_categories = site.categories | sort %}
+  <div class="category-index">
+    {% for category in sorted_categories %}
+    <a href="#{{ category[0] }}"><span>{{ category[0] }}</span><strong>{{ category[1] | size }}</strong></a>
+    {% endfor %}
+  </div>
+  <div class="category-groups">
+    {% for category in sorted_categories %}
+    <section class="category-group" id="{{ category[0] }}">
+      <header><h2>{{ category[0] }}</h2><span>{{ category[1] | size }} 篇</span></header>
+      {% for post in category[1] %}
+      <a class="category-post" href="{{ post.url | relative_url }}">
+        <time>{{ post.date | date: '%Y.%m.%d' }}</time>
+        <span>{{ post.title }}</span>
+        <i>→</i>
+      </a>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</section>

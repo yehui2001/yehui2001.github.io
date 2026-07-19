@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<div class="reading-progress" aria-hidden="true"><span></span></div>
+<article class="post-shell">
+  <a class="back-link" href="{{ '/posts/' | relative_url }}">← 返回全部文章</a>
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %m 月 %d 日' }}</time>
+      <span>·</span>
+      <span>约 {{ content | number_of_words | divided_by: 300 | plus: 1 }} 分钟阅读</span>
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="post-deck">{{ page.description }}</p>{% endif %}
+    {% if page.categories %}
+      <div class="tag-list">
+        {% for category in page.categories %}
+          <a class="tag" href="{{ '/categories/#' | append: category | relative_url }}">{{ category }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+  <div class="prose post-content">
+    {{ content }}
+  </div>
+  <footer class="post-footer">
+    <div>
+      <span class="section-kicker">END OF ARTICLE</span>
+      <strong>感谢阅读。</strong>
+    </div>
+    <a href="{{ '/posts/' | relative_url }}">继续浏览文章 →</a>
+  </footer>
+  {% if page.comments %}{% include comments.html %}{% endif %}
+</article>

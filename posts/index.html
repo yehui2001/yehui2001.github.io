@@ -1,0 +1,31 @@
+---
+layout: default
+title: 全部文章
+description: 按时间整理的全部文章与笔记。
+---
+<section class="archive-shell">
+  <header class="page-heading archive-heading">
+    <div class="section-kicker">ARCHIVE</div>
+    <h1>全部文章</h1>
+    <p>共 {{ site.posts | size }} 篇记录。沿着时间往回走，看看想法如何慢慢成形。</p>
+  </header>
+  {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+  {% for year in postsByYear %}
+  <section class="year-group">
+    <div class="year-label"><span>{{ year.name }}</span><small>{{ year.items | size }} POSTS</small></div>
+    <div class="archive-list">
+      {% for post in year.items %}
+      <article>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>
+        <div>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.description | default: post.excerpt | strip_html | truncate: 130 }}</p>
+          <div class="tag-list compact">{% for category in post.categories %}<span class="tag">{{ category }}</span>{% endfor %}</div>
+        </div>
+        <a class="round-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">↗</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</section>

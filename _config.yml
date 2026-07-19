@@ -1,3 +1,30 @@
-theme: jekyll-theme-merlot
-title:  Hello World!
-description: This is my website
+title: Yehui's Notes
+tagline: 在代码与生活之间，持续记录，缓慢生长。
+description: Yehui 的个人数字花园，记录技术学习、项目实践与生活观察。
+author: Yehui
+url: https://yehui2001.github.io
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+
+permalink: /posts/:title/
+future: false
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

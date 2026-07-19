@@ -1,0 +1,20 @@
+---
+layout: default
+title: 搜索
+description: 搜索站内文章与笔记。
+---
+<section class="search-shell">
+  <header class="page-heading">
+    <div class="section-kicker">SEARCH THE GARDEN</div>
+    <h1>你在找什么？</h1>
+    <p>输入标题、分类或正文关键词，结果会即时出现。</p>
+  </header>
+  <div class="search-box">
+    <span aria-hidden="true">⌕</span>
+    <input id="search-input" type="search" placeholder="例如：GitHub、建站、学习……" autocomplete="off" aria-label="搜索文章">
+    <kbd>ESC</kbd>
+  </div>
+  <div class="search-status" id="search-status">开始输入以搜索 {{ site.posts | size }} 篇文章</div>
+  <div class="search-results" id="search-results" aria-live="polite"></div>
+  <noscript><p class="notice">搜索功能需要启用 JavaScript。</p></noscript>
+</section>

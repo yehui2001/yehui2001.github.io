@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+  {% include head.html %}
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    {% include header.html %}
+    <main id="main-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </body>
+</html>

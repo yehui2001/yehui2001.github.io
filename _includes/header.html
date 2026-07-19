@@ -1,0 +1,29 @@
+<header class="site-header">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <div class="header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="回到首页">
+      <span class="brand-mark" aria-hidden="true">Y</span>
+      <span>
+        <strong>Yehui's Notes</strong>
+        <small>Digital garden</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">打开导航</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>首页</a>
+      <a href="{{ '/posts/' | relative_url }}" {% if page.url contains '/posts/' %}aria-current="page"{% endif %}>文章</a>
+      <a href="{{ '/categories/' | relative_url }}" {% if page.url == '/categories/' %}aria-current="page"{% endif %}>分类</a>
+      <a href="{{ '/search/' | relative_url }}" {% if page.url == '/search/' %}aria-current="page"{% endif %}>搜索</a>
+      <a href="{{ '/guestbook/' | relative_url }}" {% if page.url == '/guestbook/' %}aria-current="page"{% endif %}>留言</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
+      <span class="theme-icon" aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
