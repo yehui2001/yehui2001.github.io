@@ -36,15 +36,15 @@ ReAct 将推理与行动交织在同一循环中：**推理使行动更具目的
 
 ![ReAct 工作流](https://raw.githubusercontent.com/yehui2001/imgbed/main/4-1.png)
 
-\[
+$$
 (h_t, a_t) = \pi\left(q, (a_1, o_1), \ldots, (a_{t-1}, o_{t-1})\right)
-\]
+$$
 
 在每个时间步 \(t\)，大模型 \(\pi\) 根据初始问题 \(q\) 与之前的行动—观测历史，生成当前思考 \(h_t\) 和行动 \(a_t\)；随后通过工具获得观测结果：
 
-\[
+$$
 o_t = T(a_t)
-\]
+$$
 
 一个可运行的 ReAct Agent 通常要向 LLM 说明以下内容：
 
@@ -62,9 +62,9 @@ Plan-and-Solve 的核心动机，是避免思维链在多步骤复杂任务中�
 
 形式化地说，规划模型根据原始问题 \(q\) 生成一个包含 \(n\) 步的计划 \(P=(p_1,p_2,\dots,p_n)\)：
 
-\[
+$$
 P = \pi_{\text{plan}}(q)
-\]
+$$
 
 在执行阶段，\(\pi_{\text{solve}}\) 结合原始问题、完整计划和此前的执行结果，依次得到各步解答 \(s_i\)，最终答案为 \(s_n\)。
 
@@ -80,13 +80,13 @@ Reflection 让 Agent 在得到初稿后主动审视和改进结果。
 
 若 \(O_i\) 表示第 \(i\) 次迭代的输出，反馈和优化过程可写作：
 
-\[
+$$
 F_i = \pi_{\text{reflect}}(\text{Task}, O_i)
-\]
+$$
 
-\[
+$$
 O_{i+1} = \pi_{\text{refine}}(\text{Task}, O_i, F_i)
-\]
+$$
 
 ![Reflection 工作流](https://raw.githubusercontent.com/yehui2001/imgbed/main/c-4-3.png)
 
