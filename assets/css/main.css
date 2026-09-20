@@ -890,6 +890,22 @@ button {
   margin: 2rem auto;
   box-shadow: var(--shadow);
 }
+.reflection-figure {
+  width: min(100%, 750px);
+  aspect-ratio: 750 / 635;
+  margin: 2rem auto;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.reflection-figure img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: none;
+  object-fit: cover;
+  object-position: 94% 52%;
+  box-shadow: none;
+}
 .back-link {
   display: inline-block;
   margin-bottom: 3.5rem;

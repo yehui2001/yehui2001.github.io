@@ -88,7 +88,9 @@ $$
 O_{i+1} = \pi_{\text{refine}}(\text{Task}, O_i, F_i)
 $$
 
-![Reflection 工作流](https://raw.githubusercontent.com/yehui2001/imgbed/main/c-4-3.png)
+<figure class="reflection-figure">
+  <img src="{{ '/assets/images/reflection-workflow-source.png' | relative_url }}" alt="Reflection 工作流：Agent 根据轨迹、评估器和自我反思形成长期经验，并据此行动">
+</figure>
 
 其中，`Trajectory` 是任务从开始到当前时刻的完整行动轨迹；`Evaluator` 负责评估轨迹而非直接执行任务；`Self-reflection` 则将错误原因和规避方式沉淀为可复用的 `Experience`。
 
