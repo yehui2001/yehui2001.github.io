@@ -19,6 +19,15 @@
   <meta name="twitter:image" content="{{ '/assets/images/og.png' | absolute_url }}">
   <link rel="icon" href="https://github.com/yehui2001.png?size=64">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.math %}
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
+      svg: {fontCache: 'global'}
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {% endif %}
   <script>
     (function () {
       var saved = localStorage.getItem('theme');
