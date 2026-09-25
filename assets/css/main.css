@@ -523,6 +523,103 @@ button {
   font: 1.05rem/1.75 var(--serif);
 }
 
+/* Pelican demos */
+.pelican-section {
+  border-top: 1px solid var(--line);
+  padding: 6rem max(1.5rem, calc((100vw - var(--max)) / 2));
+}
+.pelican-section .section-heading-row {
+  margin-bottom: 2.2rem;
+}
+.pelican-section h2 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+}
+.pelican-intro {
+  max-width: 650px;
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font: 0.98rem/1.8 var(--serif);
+}
+.pelican-count {
+  flex: none;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.pelican-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+.pelican-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.pelican-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #d8ebdc;
+}
+.pelican-preview iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+.pelican-preview > a {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding: 1rem;
+}
+.pelican-preview > a span {
+  padding: 0.55rem 0.8rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.72rem;
+  font-weight: 750;
+  transition: transform 0.2s;
+}
+.pelican-preview > a:hover span,
+.pelican-preview > a:focus-visible span {
+  transform: translateY(-4px);
+}
+.pelican-card-info {
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+.pelican-number,
+.pelican-model {
+  color: var(--blue);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+.pelican-model {
+  margin-left: 0.8rem;
+  color: var(--ink-soft);
+}
+.pelican-card h3 {
+  margin: 0.6rem 0 0.35rem;
+  font-size: 1.45rem;
+  line-height: 1.3;
+}
+.pelican-card h3 a:hover {
+  color: var(--blue);
+}
+.pelican-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font: 0.85rem/1.65 var(--serif);
+}
+
 /* Explore */
 .explore-section {
   border-top: 1px solid var(--line);
@@ -1228,6 +1325,9 @@ button {
   .explore-grid {
     grid-template-columns: 1fr;
   }
+  .pelican-grid {
+    grid-template-columns: 1fr;
+  }
   .explore-card {
     min-height: 260px;
   }
@@ -1277,7 +1377,8 @@ button {
     transform: rotate(1deg);
   }
   .latest-section,
-  .explore-section {
+  .explore-section,
+  .pelican-section {
     padding: 4.5rem 1.2rem;
   }
   .section-heading-row {

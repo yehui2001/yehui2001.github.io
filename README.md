@@ -29,3 +29,7 @@ categories: [分类一, 分类二]
 ## 启用评论
 
 评论由 [Utterances](https://utteranc.es/) 托管。首次使用时，需要为 `yehui2001/yehui2001.github.io` 仓库安装 Utterances GitHub App，并确认仓库已启用 Issues。即使评论框尚未启用，页面也保留了直接前往 GitHub Issues 留言的入口。
+
+# 鹈鹕骑行 HTML 作品
+
+首页的「AI 鹈鹕骑行实验」模块读取 `_data/pelican_demos.yml`。新增作品时，把独立 HTML 放进 `demos/`，再在清单中添加 `title`、`description`、`file` 和 `number`；若已确认生成模型，可添加 `model`。`file` 使用以 `/demos/` 开头的站内路径。

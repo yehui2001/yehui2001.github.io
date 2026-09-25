@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>鹈鹕骑自行车 · SVG 2D 动画</title>
+  <style>
+    :root { --ink:#17324d; --sky:#bcecff; --sun:#ffd36b; --water:#57b8c8; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; overflow:hidden;
+      background:linear-gradient(#dff8ff 0 53%, #75d1d0 53% 100%); font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif; color:var(--ink); }
+    .frame { width:min(1100px,96vw); aspect-ratio:16/10; position:relative; border:5px solid #17324d; border-radius:28px; overflow:hidden; background:var(--sky); box-shadow:0 18px 0 #17324d33,0 28px 60px #17324d33; }
+    svg { width:100%; height:100%; display:block; }
+    .title { position:absolute; left:28px; top:22px; background:#fff9; border:3px solid var(--ink); border-radius:16px; padding:10px 16px; font-weight:900; letter-spacing:.08em; }
+    .hint { position:absolute; right:24px; bottom:18px; background:#ffffffb8; border-radius:999px; padding:7px 13px; font-size:12px; font-weight:700; }
+    .bird { transform-origin: 560px 290px; animation: bob .72s ease-in-out infinite alternate; }
+    .pedals { transform-origin: 570px 444px; animation: pedal .72s linear infinite; }
+    .wheel { transform-box:fill-box; transform-origin:center; animation: spin 1.1s linear infinite; }
+    .wing { transform-origin: 540px 235px; animation: flap .72s ease-in-out infinite alternate; }
+    .cloud { animation: drift 18s linear infinite; }
+    .cloud.slow { animation-duration:28s; animation-delay:-10s; }
+    .reed { transform-origin:bottom; animation:sway 2.4s ease-in-out infinite alternate; }
+    .splash { animation:splash 1.1s ease-in-out infinite; }
+    @keyframes bob { to { transform:translateY(5px) rotate(1deg); } }
+    @keyframes pedal { to { transform:rotate(360deg); } }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes flap { to { transform:rotate(10deg) translate(2px,5px); } }
+    @keyframes drift { from { transform:translateX(-180px); } to { transform:translateX(1040px); } }
+    @keyframes sway { to { transform:rotate(5deg); } }
+    @keyframes splash { 50% { opacity:.3; transform:scaleX(1.12); } }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <div class="title">鹈鹕的海边骑行</div>
+    <div class="hint">SVG · 2D 动画</div>
+    <svg viewBox="0 0 1000 625" role="img" aria-label="一只鹈鹕骑着自行车沿海边前进">
+      <defs>
+        <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#a9eaff"/><stop offset="1" stop-color="#e7fbff"/></linearGradient>
+        <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#49b7c9"/><stop offset="1" stop-color="#218fae"/></linearGradient>
+        <linearGradient id="sand" x2="0" y2="1"><stop stop-color="#ffe3a0"/><stop offset="1" stop-color="#f6bb70"/></linearGradient>
+      </defs>
+      <rect width="1000" height="625" fill="url(#sky)"/>
+      <circle cx="805" cy="112" r="56" fill="#ffd36b" stroke="#17324d" stroke-width="7"/>
+      <g class="cloud" fill="#fff" stroke="#17324d" stroke-width="6" stroke-linejoin="round"><path d="M-90 150 Q-50 111 -8 144 Q17 96 70 130 Q105 130 119 164 H-90Z"/></g>
+      <g class="cloud slow" fill="#fff" stroke="#17324d" stroke-width="6" stroke-linejoin="round"><path d="M720 185 Q750 150 785 178 Q810 136 855 170 Q890 168 904 198 H720Z"/></g>
+      <path d="M0 323 Q170 298 330 325 T680 321 T1000 325 V625 H0Z" fill="url(#sea)" stroke="#17324d" stroke-width="7"/>
+      <path d="M0 385 Q160 359 335 382 T680 380 T1000 386" fill="none" stroke="#b8f4ef" stroke-width="9" stroke-linecap="round" opacity=".8"/>
+      <path d="M0 466 Q220 425 480 464 T1000 463 V625 H0Z" fill="url(#sand)" stroke="#17324d" stroke-width="7"/>
+      <g class="reed" fill="none" stroke="#296b67" stroke-width="8" stroke-linecap="round"><path d="M110 480 Q104 423 117 382 M115 428 Q89 405 78 376 M113 445 Q143 418 155 389"/><path d="M885 480 Q880 421 898 372 M891 432 Q865 404 858 378 M891 448 Q923 420 933 386"/></g>
+      <g class="splash" fill="none" stroke="#d8ffff" stroke-width="7" stroke-linecap="round"><path d="M370 502q32-20 64 0M650 507q36-20 71 0"/></g>
+      <!-- bicycle -->
+      <g stroke="#17324d" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <g class="wheel"><circle cx="430" cy="466" r="66" stroke="#f9f7e9" stroke-width="10"/><path d="M430 400v132M364 466h132M383 419l94 94M477 419l-94 94" stroke-width="3"/></g>
+        <g class="wheel"><circle cx="700" cy="466" r="66" stroke="#f9f7e9" stroke-width="10"/><path d="M700 400v132M634 466h132M653 419l94 94M747 419l-94 94" stroke-width="3"/></g>
+        <path d="M430 466 L535 365 L605 466 L430 466 M535 365 L700 466 M605 466 L668 355"/>
+        <path d="M654 355h34 M668 355l-4-25"/><path d="M525 359l-22-19"/>
+      </g>
+      <g class="pedals" fill="none" stroke="#17324d" stroke-width="7"><circle cx="570" cy="444" r="27"/><path d="M570 444l25-17m-25 17-23 19M595 427h20M547 463h-20"/></g>
+      <!-- pelican -->
+      <g class="bird" stroke="#17324d" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M513 319 Q491 275 515 225 Q534 185 584 196 Q626 205 629 252 Q630 300 594 326Z" fill="#f7f0dc"/>
+        <path class="wing" d="M531 237 Q573 211 604 244 Q575 274 537 286 Q518 274 531 237Z" fill="#e8dcc2"/>
+        <path d="M575 201 Q581 151 627 135 Q667 121 683 154 Q690 174 667 192 L624 219Z" fill="#fff8e9"/>
+        <path d="M627 172 Q680 158 759 184 Q777 191 758 205 Q684 223 625 207Z" fill="#f59c55"/>
+        <path d="M628 204 Q677 210 752 204 Q714 246 643 235Z" fill="#e78148"/>
+        <circle cx="646" cy="164" r="7" fill="#17324d" stroke="none"/>
+        <path d="M546 318 L548 386 M585 318 L578 385" fill="none"/><path d="M548 385l-17 9m47-9 18 9" fill="none"/>
+        <path d="M536 317 Q552 300 582 313" fill="none"/>
+      </g>
+      <g fill="#fff" opacity=".6"><circle cx="210" cy="515" r="6"/><circle cx="805" cy="535" r="5"/></g>
+    </svg>
+  </main>
+</body>
+</html>

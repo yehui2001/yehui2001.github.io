@@ -1,0 +1,10 @@
+- title: 海风骑行记
+  description: 有昼夜切换、速度调节和播放控制的海边慢旅行。
+  file: /demos/pelican-ride.html
+  number: '01'
+  # 确认生成模型后可添加：model: 模型名称
+
+- title: 鹈鹕的海边骑行
+  description: 色彩明快的 SVG 2D 循环动画。
+  file: /demos/pelican-bicycle.html
+  number: '02'

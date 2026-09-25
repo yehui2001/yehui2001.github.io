@@ -77,6 +77,33 @@ description: Yehui 的个人数字花园，记录技术学习、项目实践与�
   </div>
 </section>
 
+<section class="pelican-section" id="pelican-demos" aria-labelledby="pelican-heading">
+  <div class="section-heading-row">
+    <div>
+      <div class="section-kicker">AI PELICAN STUDIES</div>
+      <h2 id="pelican-heading">同一只鹈鹕，不同种骑法。</h2>
+      <p class="pelican-intro">收集不同 AI 绘制的鹈鹕骑车 HTML 小实验。点开作品，看看各自的画风与细节。</p>
+    </div>
+    <span class="pelican-count">{{ site.data.pelican_demos | size }} 个作品 / 持续更新</span>
+  </div>
+  <div class="pelican-grid">
+    {% for demo in site.data.pelican_demos %}
+    <article class="pelican-card">
+      <div class="pelican-preview">
+        <iframe src="{{ demo.file | relative_url }}" title="{{ demo.title | escape }}动画预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <a href="{{ demo.file | relative_url }}" aria-label="打开{{ demo.title | escape }}完整作品"><span>打开作品 ↗</span></a>
+      </div>
+      <div class="pelican-card-info">
+        <span class="pelican-number">DEMO / {{ demo.number }}</span>
+        {% if demo.model %}<span class="pelican-model">{{ demo.model | escape }}</span>{% endif %}
+        <h3><a href="{{ demo.file | relative_url }}">{{ demo.title | escape }}</a></h3>
+        <p>{{ demo.description | escape }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="explore-section">
   <div class="section-kicker">EXPLORE MORE</div>
   <h2>不止是文章。</h2>
