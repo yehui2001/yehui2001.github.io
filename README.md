@@ -32,4 +32,4 @@ categories: [分类一, 分类二]
 
 # 鹈鹕骑行 HTML 作品
 
-首页的「AI 鹈鹕骑行实验」模块读取 `_data/pelican_demos.yml`。新增作品时，把独立 HTML 放进 `demos/`，再在清单中添加 `title`、`description`、`file` 和 `number`；若已确认生成模型，可添加 `model`。`file` 使用以 `/demos/` 开头的站内路径。
+首页的「AI 鹈鹕骑行实验」模块读取 `_data/pelican_demos.yml`。新增作品时，把独立 HTML 放进 `demos/`，再在清单中添加 `title`、`description`、`file`、`number`、`date`（如 `2026.9.25`）和 `model`（如 `GPT-6 Astra Ultra`）。卡片以“日期/模型”为主标题，原作品名作为副标题。`file` 使用以 `/demos/` 开头的站内路径。

@@ -595,16 +595,11 @@ button {
 .pelican-card-info {
   padding: 1.35rem 1.5rem 1.5rem;
 }
-.pelican-number,
-.pelican-model {
+.pelican-number {
   color: var(--blue);
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.13em;
-}
-.pelican-model {
-  margin-left: 0.8rem;
-  color: var(--ink-soft);
 }
 .pelican-card h3 {
   margin: 0.6rem 0 0.35rem;
@@ -613,6 +608,12 @@ button {
 }
 .pelican-card h3 a:hover {
   color: var(--blue);
+}
+.pelican-original-title {
+  margin-bottom: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 .pelican-card p {
   margin: 0;

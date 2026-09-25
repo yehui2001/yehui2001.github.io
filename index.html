@@ -47,8 +47,8 @@ description: Yehui 的个人数字花园，记录技术学习、项目实践与�
       </div>
       <div class="pelican-card-info">
         <span class="pelican-number">DEMO / {{ demo.number }}</span>
-        {% if demo.model %}<span class="pelican-model">{{ demo.model | escape }}</span>{% endif %}
-        <h3><a href="{{ demo.file | relative_url }}">{{ demo.title | escape }}</a></h3>
+        <h3><a href="{{ demo.file | relative_url }}">{% if demo.date and demo.model %}{{ demo.date | escape }}/{{ demo.model | escape }}{% else %}{{ demo.title | escape }}{% endif %}</a></h3>
+        {% if demo.date and demo.model %}<div class="pelican-original-title">{{ demo.title | escape }}</div>{% endif %}
         <p>{{ demo.description | escape }}</p>
       </div>
     </article>
