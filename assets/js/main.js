@@ -12,13 +12,26 @@
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
   function resetHomeScroll() {
-    if (window.location.pathname === "/" && window.location.hash === "#top") {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }
+    if (
+      window.location.pathname !== "/" ||
+      (window.location.hash && window.location.hash !== "#top")
+    ) return;
+
+    var previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () {
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousBehavior;
+    });
   }
 
   resetHomeScroll();
-  window.addEventListener("pageshow", resetHomeScroll);
+  window.addEventListener("load", resetHomeScroll);
+  window.addEventListener("pageshow", function () {
+    resetHomeScroll();
+    window.setTimeout(resetHomeScroll, 0);
+  });
 
   function currentTheme() {
     return root.dataset.theme === "dark" ? "dark" : "light";
