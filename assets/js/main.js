@@ -9,6 +9,17 @@
   var backToTop = document.querySelector(".back-to-top");
   var progress = document.querySelector(".reading-progress span");
 
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  function resetHomeScroll() {
+    if (window.location.pathname === "/" && window.location.hash === "#top") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  }
+
+  resetHomeScroll();
+  window.addEventListener("pageshow", resetHomeScroll);
+
   function currentTheme() {
     return root.dataset.theme === "dark" ? "dark" : "light";
   }
